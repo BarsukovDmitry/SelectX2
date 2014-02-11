@@ -326,7 +326,7 @@
             this.populate(true);
 
             //show controls
-            //this.$hiddenListbox.css('display', 'none');
+            this.$hiddenListbox.css('display', 'none');
             this.$container.insertAfter(this.$hiddenListbox);
         }
     });
