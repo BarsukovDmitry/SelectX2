@@ -1,0 +1,34 @@
+﻿.selectX2Container {
+    margin: 10px 0;
+}
+.selectX2OptionsSelect {
+    display: block;
+}
+.selectX2ButtonsContainer1 {
+    margin-top: 5px;
+}
+.selectX2ButtonsContainer2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.selectX2Container select {
+    width: 100%;
+}
+.selectX2Container button {
+    margin-right: 5px;
+}
+span.selectX2DeleteIcon {
+    position: relative;
+}
+span.selectX2DeleteIcon span {
+    position: absolute;
+    display: block;
+    top: -2px;
+    right: 0px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+span.selectX2DeleteIcon input {
+    padding-right: 16px;
+}
