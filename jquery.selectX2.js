@@ -21,7 +21,7 @@
             //override options
             $.extend(options, optionsArg);
 
-            //contants
+            //constants
             var showOptionsText = 'Показать варианты ↓';
             var hideOptionsText = 'Скрыть варианты ↑';
             var addOptionsText = 'Выбрать';
@@ -82,7 +82,7 @@
                 }
 
                 try {
-                    toSelect.add(option, toSelect.options[index]);
+                    toSelect.add(newOption, toSelect.options[index]);
                 }
                 //IE
                 catch (ex) {
