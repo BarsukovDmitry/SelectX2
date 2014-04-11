@@ -90,7 +90,18 @@
                 }
             }
 
-            function moveOptionByIndex(fromSelect, toSelect, optionIndex, select) {
+            function getOriginalIndexByValue(hiddenListbox, value) {
+                var originalIndex = 0;
+                for (i = 0; i < hiddenListbox.options.length; ++i) {
+                    if (value == hiddenListbox.options[i].value) {
+                        originalIndex = i;
+                    }
+                }
+
+                return originalIndex;
+            }
+
+            function moveOptionByIndex(hiddenListbox, fromSelect, toSelect, optionIndex, select) {
                 var option = fromSelect.options[optionIndex];
                 var text = option.firstChild.nodeValue;
                 var value = option.value;
@@ -98,9 +109,13 @@
                 newOption.title = text;
 
                 //determine the position for insert
+                var originalIndex = getOriginalIndexByValue(hiddenListbox, value);
+
                 var i;
                 for (i = 0; i < toSelect.options.length; ++i) {
-                    if (text < toSelect.options[i].text)
+                    var cycleItemOriginalIndex = getOriginalIndexByValue(hiddenListbox, toSelect.options[i].value);
+
+                    if (originalIndex < cycleItemOriginalIndex)
                         break;
                 }
 
@@ -151,7 +166,7 @@
                         var value = fromSelect.options[i].value;
                         var text = $(fromSelect.options[i]).text();
 
-                        moveOptionByIndex(fromSelect, toSelect, i, true);
+                        moveOptionByIndex(this.$hiddenListbox[0], fromSelect, toSelect, i, true);
 
                         this.$hiddenListbox.find('option[value=' + value + ']').prop('selected', action == 'add');
 
